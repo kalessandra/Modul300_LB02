@@ -5,9 +5,9 @@
    1. [GitHub Account](#subparagraph1)
 2. [Linux](#paragraph1)
 3. [Virtualisierung](#paragraph2)
-4. [Vagrant](#paragraph3)
+4. [Docker](#paragraph3)
    1. [Installationsanleitung](#subparagraph2)
-   2. [Vagrantbefehle](#subparagraph3)
+   2. [Docker Befehle](#subparagraph3)
 5. [Testing](#paragraph4)
 6. [Umgebung](#paragraph5)
 7. [Versionsverwaltung / Git](#paragraph6)
@@ -33,14 +33,14 @@ Ein GitHub Account wurde erstellt.
 ## Virtualisierung <a name="paragraph2"></a>
 
 
-## Vagrant <a name="paragraph3"></a>
+## Docker <a name="paragraph3"></a>
  
 
 ### Installationsanleitung <a name="subparagraph2"></a>
 
 
 
-### Vagrant Befehle <a name="subparagraph3"></a>
+### Docker Befehle <a name="subparagraph3"></a>
 
 | Befehle | Beschreibung
 | ------- | -----------
