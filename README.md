@@ -56,8 +56,8 @@ Ein GitHub Account wurde erstellt.
 | docker inspect | Gibt umfangreiche Informationen zu Containern oder Images aus. Dazu gehören die meisten Konfigurationsoptionen und Netzwerkeinstellungen sowie Volumes-Mappings.
 | docker diff | Gibt die Änderungen am Dateisystem des Containers verglichen mit dem Image aus, aus dem er gestartet wurde.
 | docker top | Gibt Informationen zu den laufenden Prozessen in einem angegebenen Container aus.
-|  |  
-|  |  
+| docker build | Der Befehl docker build erfordert ein Dockerfile und einen Build Context. 
+  
 |  |  
 |  |  
 
