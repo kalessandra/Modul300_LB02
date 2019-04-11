@@ -61,6 +61,7 @@ Ein GitHub Account wurde erstellt.
 #### Dockerfile Anweisungen <a name="subparagraph2"></a>
 
 | Befehle | Beschreibung 
+| ------- | -----------
 | ADD | Kopiert Dateien aus dem Build Context oder von URLs in das Image
 | CMD | Führt die angegebene Anweisung aus, wenn der Container gestartet wurde. Ist auch ein ENTRYPOINT definiert, wird die Anweisung als Argument für ENTRYPOINT verwendet. 
 | COPY | Wird verwendet, um Dateien aus dem Build Context in das Image zu kopieren. Es gibt die zwei Formen COPY src dest und COPY ["src", "dest"]. Das JSON-Array-Format ist notwendig, wenn die Pfade Leerzeichen enthalten.
