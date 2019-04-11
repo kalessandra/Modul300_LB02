@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+    name: Modul300_LB02-web
+spec:
+    replicas: 1
+    template:
+        metadata:
+            labels:
+                app: Modul300_LB02-web
+                tier: frontend
+        spec:
+            containers:
+                - name: Modul300_LB02-web
+                  image: kalessandra/Modul300_LB02-web:latest
+                  resources:
+                      requests:
+                          cpu: 100m
+                          memory: 100Mi
+                  ports:
+                      - containerPort: 80
