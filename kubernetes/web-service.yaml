@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-    name: Modul300_LB02-web
+    name: modul300_lb02-web
     labels:
-        app: Modul300_LB02-web
+        app: modul300_lb02-web
         tier: frontend
 spec:
     type: LoadBalancer

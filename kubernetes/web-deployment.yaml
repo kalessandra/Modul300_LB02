@@ -1,18 +1,18 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-    name: Modul300_LB02-web
+    name: modul300_lb02-web
 spec:
     replicas: 1
     template:
         metadata:
             labels:
-                app: Modul300_LB02-web
+                app: modul300_lb02-web
                 tier: frontend
         spec:
             containers:
-                - name: Modul300_LB02-web
-                  image: kalessandra/Modul300_LB02-web:latest
+                - name: modul300_lb02-web
+                  image: kalessandra/modul300_lb02-web:latest
                   resources:
                       requests:
                           cpu: 100m
