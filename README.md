@@ -86,7 +86,7 @@ Ein GitHub Account wurde erstellt.
 
 ## Umgebung <a name="paragraph5"></a>
 +---------------------------------------------------------------+  <br>
-!                                                               ! 	
+!                                                               !  <br>
 !    +-----------------------+    +------------------------+    ! 
 !    ! Web-Server            !    ! Datenbank-Server       !    !       
 !    ! Port: 80              !    ! Port: 3306             !    !       
