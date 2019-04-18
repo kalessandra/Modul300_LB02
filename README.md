@@ -121,13 +121,6 @@ http://127.0.0.1:8000
 | IP Addresse : 127.0.0.1|
 |Port: 8000|
 |Volume: /var/ww/html|
-+---------------------------+  
-! Web-Server                ! 
-!                           !  
-! IP  Adresse: 127.0.0.1    ! 
-! Port: 8000                !      
-! Volume: /var/www/html     !       
-+---------------------------+
  
 
 
