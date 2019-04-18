@@ -116,26 +116,13 @@ http://127.0.0.1:8000
 | Über mich Seite erstellt | Seite ist auf http://127.0.0.1:8000/?page_id=7 sichtbar
 
 ## Umgebung <a name="paragraph5"></a>
-+---------------------------------+ <br>
-!                                 !
-!    +-----------------------+    !  
-!    ! Web-Server            !    !      
-!    ! Port: 8000            !    !      
-!    ! Volume: /var/www/html !    !       
-!    +-----------------------+    ! 
-!                                 !
-! Container                       !	
-+---------------------------------+
-! Container-Engine: Docker        !	
-+---------------------------------+
-! Gast OS: Ubuntu 16.04           !	
-+---------------------------------+
-! Hypervisor: HyperV              !	
-+---------------------------------+
-! Host-OS: Windows                !	
-+---------------------------------+
-! Notebook - Schulnetz 10.x.x.x   !                 
-+---------------------------------+ 
++-----------------------+  
+! Web-Server            !
+! IP  Adresse: 127.0.0.1!
+! Port: 8000            !      
+! Volume: /var/www/html !       
++-----------------------+
+ 
 
 
 
