@@ -3,7 +3,7 @@
 # Table of contents
 1. [Installierte Applikationen](#applikationen)
    1. [GitHub Account](#subparagraph1)
-2. [Linux](#paragraph1)
+2. [Containerisierung](#paragraph1)
 3. [Virtualisierung](#paragraph2)
 4. [Docker](#paragraph3)
    1. [Installationsanleitung](#subparagraph2)
@@ -26,7 +26,7 @@ SSH-Key für Client erstellt  <br>
 ### GitHub Account <a name="subparagraph1"></a>
 Ein GitHub Account wurde erstellt.
 
-## Linux <a name="paragraph1"></a>
+## Containerisierung <a name="paragraph1"></a>
  
 
 
@@ -111,9 +111,9 @@ http://127.0.0.1:8000
 ## Testing <a name="paragraph4"></a>
 | Testfall | Funktioniert / Nicht Funktioniert
 | ------- | -----------
-|  | 
-|  | 
-|  | 
+| Zugriff auf 127.0.0.1:8000 funktioniert | Es hat funktioniert
+| Beitäge auf der Seite erstellen | Die Beiträge sind auf http://127.0.0.1:8000/?p=5 sichtbar
+| Über mich Seite erstellt | Seite ist auf http://127.0.0.1:8000/?page_id=7 sichtbar
 
 ## Umgebung <a name="paragraph5"></a>
 +---------------------------------------------------------------+
