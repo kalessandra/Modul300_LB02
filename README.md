@@ -37,7 +37,32 @@ Ein GitHub Account wurde erstellt.
  
 
 ### Installationsanleitung <a name="subparagraph2"></a>
+version: '2'
+services:
+   db:
+     image: mysql:5.7
+     volumes:
+       - db_data:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: 
+       MYSQL_DATABASE: wordpress
+       MYSQL_USER: wordpress
+       MYSQL_PASSWORD: wordpress
 
+   wordpress:
+     depends_on:
+       - db
+     image: wordpress:latest
+     ports:
+       - "8000:80"
+     restart: always
+     environment:
+       WORDPRESS_DB_HOST: db:3306
+       WORDPRESS_DB_USER: wordpress
+       WORDPRESS_DB_PASSWORD: wordpress
+volumes:
+    db_data:
 
 
 ### Docker Befehle <a name="subparagraph3"></a>
@@ -87,11 +112,11 @@ Ein GitHub Account wurde erstellt.
 ## Umgebung <a name="paragraph5"></a>
 +---------------------------------------------------------------+
 !                                                               !
-!    +-----------------------+    +------------------------+    !  
-!    ! Web-Server            !    ! Datenbank-Server       !    !      
-!    ! Port: 80              !    ! Port: 3306             !    !      
-!    ! Volume: /var/www/html !    ! Volume: /var/lib/mysql !    !       
-!    +-----------------------+    +------------------------+    ! 
+!    +-----------------------+                                  !  
+!    ! Web-Server            !                                  !      
+!    ! Port: 8000            !                                  !      
+!    ! Volume: /var/www/html !                                  !       
+!    +-----------------------+                                  ! 
 !                                                               !
 ! Container                                                     !	
 +---------------------------------------------------------------+
@@ -99,7 +124,7 @@ Ein GitHub Account wurde erstellt.
 +---------------------------------------------------------------+
 ! Gast OS: Ubuntu 16.04                                         !	
 +---------------------------------------------------------------+
-! Hypervisor: VirtualBox                                        !	
+! Hypervisor: HyperV                                            !	
 +---------------------------------------------------------------+
 ! Host-OS: Windows                                              !	
 +---------------------------------------------------------------+
