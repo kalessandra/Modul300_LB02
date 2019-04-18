@@ -37,7 +37,7 @@ Ein GitHub Account wurde erstellt.
  
 
 ### Installationsanleitung <a name="subparagraph2"></a>
-**Docker-Compose.yml File:**
+**Docker-Compose.yml File:** <br>
 version: '2' <br>
 services: <br>
    db: <br>
@@ -65,10 +65,10 @@ services: <br>
 volumes: <br>
     db_data: <br>
 
-**Befehl im CMD:**
+**Befehl im CMD:** <br>
 docker-compose up
 
-**Webpage:**
+**Webpage:** <br>
 http://127.0.0.1:8000
 
 ### Docker Befehle <a name="subparagraph3"></a>
