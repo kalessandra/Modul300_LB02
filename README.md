@@ -116,6 +116,11 @@ http://127.0.0.1:8000
 | Über mich Seite erstellt | Seite ist auf http://127.0.0.1:8000/?page_id=7 sichtbar
 
 ## Umgebung <a name="paragraph5"></a>
+|Web-Server|
+| -------- |
+| IP Addresse : 127.0.0.1|
+|Port: 8000|
+|Volume: /var/ww/html|
 +---------------------------+  
 ! Web-Server                ! 
 !                           !  
