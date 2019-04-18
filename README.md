@@ -116,7 +116,7 @@ http://127.0.0.1:8000
 | Über mich Seite erstellt | Seite ist auf http://127.0.0.1:8000/?page_id=7 sichtbar
 
 ## Umgebung <a name="paragraph5"></a>
-+---------------------------------+
++---------------------------------+ <br>
 !                                 !
 !    +-----------------------+    !  
 !    ! Web-Server            !    !      
