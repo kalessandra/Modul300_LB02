@@ -17,8 +17,8 @@
 11. [Refelxion](#paragraph10)   
 
 ## Installierte Applikationen <a name="applikationen"></a>
-VirtualBox  <br>
-Vagrant  <br>
+HyperV  <br>
+Docker  <br>
 Visualstudio-Code  <br>
 Git-Client  <br>
 SSH-Key für Client erstellt  <br>
@@ -34,7 +34,7 @@ Ein GitHub Account wurde erstellt.
 
 
 ## Docker <a name="paragraph3"></a>
- 
+Docker ist eine Freie Software zur Isolierung von Anwendungen mit Containervirtualisierung. Docker vereinfacht die Bereitstellung von Anwendungen, weil sich Container, die alle nötigen Pakete enthalten, leicht als Dateien transportieren und installieren lassen. Container gewährleisten die Trennung und Verwaltung der auf einem Rechner genutzten Ressourcen. Das beinhaltet laut Aussage der Entwickler: Code, Laufzeitmodul, Systemwerkzeuge, Systembibliotheken – alles was auf einem Rechner installiert werden kann. 
 
 ### Installationsanleitung <a name="subparagraph2"></a>
 **Docker-Compose.yml File:** <br>
