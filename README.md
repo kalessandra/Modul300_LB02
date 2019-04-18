@@ -37,32 +37,32 @@ Ein GitHub Account wurde erstellt.
  
 
 ### Installationsanleitung <a name="subparagraph2"></a>
-version: '2'
-services:
-   db:
-     image: mysql:5.7
-     volumes:
-       - db_data:/var/lib/mysql
-     restart: always
-     environment:
-       MYSQL_ROOT_PASSWORD: 
-       MYSQL_DATABASE: wordpress
-       MYSQL_USER: wordpress
-       MYSQL_PASSWORD: wordpress
+version: '2' <br>
+services: <br>
+   db: <br>
+     image: mysql:5.7 <br>
+     volumes: <br>
+       - db_data:/var/lib/mysql <br>
+     restart: always <br>
+     environment: <br>
+       MYSQL_ROOT_PASSWORD:  <br>
+       MYSQL_DATABASE: wordpress <br>
+       MYSQL_USER: wordpress <br>
+       MYSQL_PASSWORD: wordpress <br>
 
-   wordpress:
-     depends_on:
-       - db
-     image: wordpress:latest
-     ports:
-       - "8000:80"
-     restart: always
-     environment:
-       WORDPRESS_DB_HOST: db:3306
-       WORDPRESS_DB_USER: wordpress
-       WORDPRESS_DB_PASSWORD: wordpress
-volumes:
-    db_data:
+   wordpress: <br>
+     depends_on: <br>
+       - db <br>
+     image: wordpress:latest <br>
+     ports: <br>
+       - "8000:80" <br>
+     restart: always <br>
+     environment: <br>
+       WORDPRESS_DB_HOST: db:3306 <br>
+       WORDPRESS_DB_USER: wordpress <br>
+       WORDPRESS_DB_PASSWORD: wordpress <br>
+volumes: <br>
+    db_data: <br>
 
 
 ### Docker Befehle <a name="subparagraph3"></a>
