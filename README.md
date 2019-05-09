@@ -4,17 +4,18 @@
 1. [Installierte Applikationen](#applikationen)
    1. [GitHub Account](#subparagraph1)
 2. [Containerisierung](#paragraph1)
-3. [Virtualisierung](#paragraph2)
-4. [Docker](#paragraph3)
+3. [Docker](#paragraph3)
    1. [Installationsanleitung](#subparagraph2)
    2. [Docker Befehle](#subparagraph3)
-5. [Testing](#paragraph4)
-6. [Umgebung](#paragraph5)
-7. [Versionsverwaltung / Git](#paragraph6)
-8. [Mark Down](#paragraph7)
-9. [Systemsicherheit](#paragraph8)
-10. [Vergleich Vorwissen](#paragraph9)  
-11. [Refelxion](#paragraph10)   
+4. [Testing](#paragraph4)
+5. [Umgebung](#paragraph5)
+6. [Versionsverwaltung / Git](#paragraph6)
+7. [Mark Down](#paragraph7)
+8. [Systemsicherheit](#paragraph8)
+   1. [Aspekte](#subparagraph3)
+   2. [Sicherheitsmassnahmen](#subparagraph3)
+9.  [Vergleich Vorwissen](#paragraph9)  
+10. [Refelxion](#paragraph10)   
 
 ## Installierte Applikationen <a name="applikationen"></a>
 HyperV  <br>
@@ -27,10 +28,8 @@ SSH-Key für Client erstellt  <br>
 Ein GitHub Account wurde erstellt.
 
 ## Containerisierung <a name="paragraph1"></a>
- 
+Containerisierung wird von vielen als „Virtualisierung der Virtualisierung“ oder „Virtualisierung der nächsten Generation“ gesehen. Dabei gab es die Containerisierung bereits lange vor der Virtualisierung oder dem Aufkommen von modernen Technologien wie Docker und Linux Containers. Ähnliche Technologien waren Teil von Mainframe-Systemen, die in den vergangenen Jahrzehnten in der IT weit verbreitet waren.
 
-
-## Virtualisierung <a name="paragraph2"></a>
 
 
 ## Docker <a name="paragraph3"></a>
@@ -126,17 +125,44 @@ http://127.0.0.1:8000
 
 
 ## Versionsverwaltung / Git <a name="paragraph6"></a>
-
+Die Versionsverwatung findet man auf meinem Github Repository.
 
 ## Mark Down <a name="paragraph7"></a>
-
+Ich habe dieses Modul mit Markdown dokumentiert.
 
 ## Systemsicherheit <a name="paragraph8"></a>
+docker run --name fuck wordpress bash -c 'echo "stdout"; echo "stderr" >>2'
+Es hat funktioniert. Mit rocker rm [name] wird das JSON-File wieder gelöscht.
 
+### Aspekte <a name="subparagraph3"></a>
+Kernel Exploits <br>
+Anders als in einer VM wird der Kernel gemeinsam von allen Containern und dem Host verwendet, wodurch Angriffsstellen im Kernel deutlich mehr Auswirkungen haben. Sollte ein Container eine Kernel Panic verursachen, zieht das den ganzen Host mit herunter. In VMs ist die Situation viel besser – ein Angreifer müsste einen Angriff sowohl durch den VM-Kernel als auch den Hypervisor leiten, bevor er an den Host-Kernel kommt.  <br>
+
+Denial-of-Service-(DoS-)Angriffe <br>
+Alle Container teilen sich die Kernel-Ressourcen. Kann ein Container den Zugriff auf bestimmte Ressourcen ganz für sich beanspruchen – auch so etwas wie den Speicher oder esoterischere Ressourcen wie User IDs (UIDs) –, kann er die anderen Container auf dem Host verhungern lassen, was einem Denial-of-Service entspricht, bei dem berechtigte Anwender nicht mehr Teile des Systems oder das System im Ganzen ansprechen können.  <br>
+
+Container-Breakouts <br>
+Ein Angreifer, der Zugriff auf einen Container erhält, sollte nicht dazu in der Lage sein, auf andere Container oder den Host zuzugreifen. Da die Benutzer nicht über Namensräume getrennt sind, bekommen alle Prozesse, die aus dem Container ausbrechen, auf dem Host die gleichen Privilegien wie im Container – ist man im Container root, so wird man auch root auf dem Host sein.  <br>
+
+Das bedeutet auch, dass über mögliche Privilege-Escalation-Angriffe Gedanken gemacht werden müssen, bei denen ein Anwender mehr Rechte erhält, als ihm eigentlich zustehen – meist durch einen Fehler im Anwendungscode, der mit zusätzlichen Berechtigungen laufen muss. Da sich die Container-Technologie immer noch in der Anfangsphase befindet, sollten man bei den Überlegungen zur Sicherheit davon ausgehen, dass Container-Breakouts unwahrscheinlich, aber möglich sind.  <br>
+
+Vergiftete Images <br>
+Woher weiss man, dass die eingesetzten Images sicher sind, nicht manipuliert wurden und von dem stammen, der das vorgibt? Kann ein Angreifer einen selbst dazu bringen, sein Image auszuführen, sind sowohl der Host als auch die eigenen Daten gefährdet? Genauso will man sicher sein, dass die ausgeführten Images aktuell sind und keine Softwareversionen mit bekannten Sicherheitslücken enthalten.  <br>
+
+Verratene Geheimnisse <br>
+Greift ein Container auf eine Datenbank oder einen Service zu, muss er sehr wahrscheinlich ein Geheimnis wie einen API-Schlüssel oder Benutzernamen und Passwort kennen. Ein Angreifer, der auf dieses Geheimnis Zugriff hat, kann auch den Service nutzen. Das Problem wird in einer Microservices-Architektur noch akuter, in der Container fortlaufend stoppen und wieder gestartet werden – verglichen mit einer Architektur mit einer kleinen Zahl von langlebigen VMs.
+
+### Sicherheitsmassnahmen <a name="subparagraph3"></a>
+Um dieses Ziel zu erreichen, kann man einige Schritte gehen, um die Möglichkeiten von Containern einzuschränken, zum Beispiel:
+
+... Sicherstellen, dass Prozesse in Containern nicht als root laufen, sodass das Ausnutzen von Sicherheitslücken in einem Prozess, dem Angreifer keine root-Berechtigungen geben. <br>
+... Dateisysteme schreibgeschützt einsetzen, sodass Angreifer keine Daten überschreiben oder böswillige Skripten speichern können.   <br>
+... Kernel-Aufrufe, die ein Container ausführen kann, einschränken, um die Angriffsoberfläche zu verringern.  <br>
+... Ressourcen begrenzen, die ein Container nutzen kann, um DoS-Angriffe zu verhindern, bei denen ein kompromittierter Container oder eine Anwendung so viele Ressourcen aufbraucht (wie z.B. Speicher oder CPU-Zeit), sodass der Host zum Halten kommt.
 
 ## Vergleich Vorwissen <a name="paragraph9"></a>
-
+Ich hatte kein Vorwissen über Docker, bevor wir dieses Modul hattne. In diesem Modul habe ich aber gelernt, für was Docker gebraucht wird und wie man es verwenden kann.
 
 
 ## Reflexion <a name="paragraph10"></a>
-
+Ich habe in diesem Modul gelernt, wie man mit Docker umgeht. Am Anfang haben bei mir die Dockerfile nicht richtig funktioniert, deshalb konnte ich nicht mehrere Container aufsetzten. Ich habe es nicht geschaff, mehrere Container aufzusetzten, darum habe ich nur einen Cotainer.
